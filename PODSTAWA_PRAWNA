@@ -1,0 +1,23 @@
+Mail od prowadzącego okrojony o niepotrzebne nagłówki SMTP:
+
+Reply-To: ben@mimuw.edu.pl
+Received: by 10.236.208.199 with HTTP; Fri, 11 Nov 2011 12:20:44 -0800 (PST)
+Subject: Re: MRJP - programy testowe
+From: Marcin Benke <m.benke@mimuw.edu.pl>
+To: Tomasz Wysocki <tw277696@students.mimuw.edu.pl>
+Cc: Artur Zaroda <zaroda@mimuw.edu.pl>, "idziaszek@mimuw.edu.pl" <idziaszek@mimuw.edu.pl>, 
+	Konrad Iwanicki <iwanicki@mimuw.edu.pl>, Pawel Gorecki <gorecki@mimuw.edu.pl>, 
+	Łukasz Sznuk <luke@mimuw.edu.pl>
+
+2011/11/11 Tomasz Wysocki <tw277696@students.mimuw.edu.pl>:
+> Witam,
+>
+> jaka jest polityka przedmiotu odnośnie wymieniania się programami
+> testowymi napisanymi przez siebie? Mam na myśli programy testowe tego
+> typu co udostępnione na stronie przedmiotu *.lat *.input *.output.
+
+Mozna się nimi dzielić, natomiast tak jak z każdym innym zapożyczeniem
+nalezy zaznaczyć kto jest autorem.
+
+--
+Marcin Benke
