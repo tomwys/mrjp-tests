@@ -44,7 +44,9 @@ Test można dodać za pomocą githubowego `pull request` lub wysyłając do mnie
 
 **Uwaga:** test powinien w **pierwszej linii pliku \*.lat** zawierać dane autora, np.
 
-    Author: Tomasz Wysocki 277696
+    // Author: Tomasz Wysocki 277696
+
+Jeżeli z jakiegoś powodu taki komentarz nie może znajdować się w pliku, powinien zostać utworzony dodatkowy plik z rozszerzeniem .author.
 
 Jest to wymaganie prowadzącego i testy nie spełniające to, nie zostaną wpuszczone do repo.
 
