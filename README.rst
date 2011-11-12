@@ -47,3 +47,12 @@ Test można dodać za pomocą githubowego `pull request` lub wysyłając do mnie
     Author: Tomasz Wysocki 277696
 
 Jest to wymaganie prowadzącego i testy nie spełniające to, nie zostaną wpuszczone do repo.
+
+Jak wygląda test
+================
+
+Test składa się z trzech plików z poniższymi rozszerzeniami:
+
+- *.lat* - kod programu użytego do testu
+- *.input* - dane wejściowe dla programu, plik ten jest wymagany tylko jeśli program jest poprawny i dojdzie do uruchomienia
+- *.output* - oczekiwane dane wyjściowe dla programu, plik ten jest wymagany tylko jeśli program jest poprawny i dojdzie do zakończenia programu
