@@ -1,0 +1,14 @@
+// Author: Tomasz Wysocki 277696
+
+// 1000000 stopni rekursji powinno wysypać każdy program.
+// Aby przejść ten test trzeba mieć optymalizację, która
+// zamienia rekurencję ogonową na pętlę.
+int main() {
+    printInt(sum(1000000, 0));
+    return 0;
+}
+int sum(int z, int a) {
+    if(z == 0)
+        return a;
+    return sum(z-1, a+z);
+}
