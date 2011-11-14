@@ -1,0 +1,6 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    while(true) {
+        return 0;
+    }
+}
