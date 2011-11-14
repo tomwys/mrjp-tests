@@ -1,0 +1,10 @@
+// Author: Jacek Tomaszewski 277663
+// void parameter type
+
+int main() {
+   return 0;
+}
+
+int f(void x) {
+   return 2;
+}

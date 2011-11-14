@@ -1,0 +1,7 @@
+// Author: Jacek Tomaszewski 277663
+// void variable type
+
+int main() {
+   void x;
+   return 0;
+}

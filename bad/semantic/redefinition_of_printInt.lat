@@ -1,0 +1,10 @@
+// Author: Jacek Tomaszewski 277663
+//redefinition of builtin
+
+int main() {
+   return 0; 
+}
+
+void printInt(int x) {
+    
+}
