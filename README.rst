@@ -34,6 +34,7 @@ Występuje następująca organizacja testów:
   - *semantic_or_runtime* - błąd może zależnie od implementacji zostać wykryty w dwóch miejscach (np. `if(1/0 == 0)`)
   - *runtime* - błąd, który może być wykryty tylko w runtime
   - *overflow* - programy, które mają na celu się wysypać (przepełnienie stosu itp.), ale nie zawierają błędu
+  - *infinite_loop* - programy, które są poprawne, ale się zapętlają
 
 Wraz z postępem zadania zostaną dodane kolejne kategorie (np. na rozszerzenia).
 
