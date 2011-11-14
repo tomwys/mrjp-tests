@@ -1,0 +1,19 @@
+// Author: Tomasz Wysocki 277696
+//
+// Zajmuje około 15Gb pamięci, jeśli nie masz żadnego odśmiecania.
+//
+// UWAGA: Jeśli masz swap, może porządnie zamulić komputer.
+int main() {
+    string s1 = "";
+    string s2 = "";
+    int i = 0;
+    while(i < 1024 * 100) {
+        s1 = s1 + "a";
+        if(i % 2 == 0)
+            s2 = s2 + "a";
+        i++;
+    }
+    if(s2 + s2 == s1)
+        printString("ok");
+    return 0;
+}
