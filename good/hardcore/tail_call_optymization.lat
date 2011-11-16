@@ -10,5 +10,8 @@ int main() {
 int sum(int z, int a) {
     if(z == 0)
         return a;
-    return sum(z-1, a+z);
+    int y = z;
+    if(y % 2 == 1)
+        y = -1 * z;
+    return sum(z-1, a+y);
 }
