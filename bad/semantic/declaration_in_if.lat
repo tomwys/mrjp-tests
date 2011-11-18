@@ -1,0 +1,5 @@
+int main() {
+    if(true)
+        int a;
+    return 0;
+}
