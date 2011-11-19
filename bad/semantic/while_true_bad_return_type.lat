@@ -1,0 +1,11 @@
+// Author: Tomasz Biczel 277568
+int main() {
+    while (true) {
+        string x;
+        x = readString();
+        if (x == "exit")
+            return "asd";
+        else
+            printString("jeszcze raz");
+    }
+}
