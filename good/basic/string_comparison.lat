@@ -1,0 +1,10 @@
+// Author: Tomasz Biczel 277568
+int main() {
+    string a, b;
+    a = "AAA";
+    b = "aaa";
+    if (a > b) {
+        printString("Wieksze");
+    }
+    return 0;
+}

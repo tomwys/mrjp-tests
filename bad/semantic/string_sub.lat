@@ -1,0 +1,6 @@
+// Author: Tomasz Biczel 277568
+int main() {
+  string x;
+  x = "asd" - "ewq";
+  return 0;
+}
