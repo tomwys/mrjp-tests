@@ -1,0 +1,8 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    printInt(- -1);
+    int i = 1;
+    printInt(-i);
+    printInt(2 - -i);
+    return 0;
+}
