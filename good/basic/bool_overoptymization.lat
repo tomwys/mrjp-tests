@@ -1,0 +1,10 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    print() && false;
+    return 0;
+}
+
+boolean print() {
+    printString("ahoj");
+    return true;
+}
