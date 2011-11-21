@@ -1,0 +1,13 @@
+/**
+ * @author Cezary Bartoszuk <cbart@students.mimuw.edu.pl>
+ */
+int main() {
+    return 0;
+}
+
+void f() {
+    return g();
+}
+
+void g() {
+}
