@@ -1,0 +1,5 @@
+// Autor: Tomasz Wysocki 277696
+int main() {
+    printString("abc");
+    return 0;
+}
