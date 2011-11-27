@@ -1,0 +1,6 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    printInt(5 % 3);
+    printInt(-5 % 3); // -2 - sic!
+    return 0;
+}
