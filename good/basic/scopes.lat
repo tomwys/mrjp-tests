@@ -1,0 +1,14 @@
+int main() {
+    int i = 0;
+    printInt(i);
+    {
+        int i = 1;
+        printInt(i);
+    }
+    printInt(i);
+    {
+        int i = 2;
+        printInt(i);
+    }
+    printInt(i);
+}
