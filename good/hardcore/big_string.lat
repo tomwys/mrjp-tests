@@ -13,7 +13,6 @@ int main() {
             s2 = s2 + "a";
         i++;
     }
-    if(s2 + s2 == s1)
-        printString("ok");
+    printString("Done");
     return 0;
 }

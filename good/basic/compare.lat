@@ -1,17 +1,5 @@
 // Author: Tomasz Wysocki 277696
 int main() {
-    if("a" < "b")
-        printString("1");
-    if("b" > "a")
-        printString("1");
-    if("ab" < "a")
-        printString("2");
-    if("a" > "ab")
-        printString("2");
-    if("a" <= "a")
-        printString("3");
-    if("a" >= "a")
-        printString("3");
     if(1 <= 1)
         printString("4");
     if(1 >= 1)
