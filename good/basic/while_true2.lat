@@ -1,9 +1,9 @@
-// Author: Tomasz Biczel 277568
+// Author: Tomasz Biczel 277568, Tomasz Wysocki 277696
 int main() {
     while (true) {
-        string x;
-        x = readString();
-        if (x == "exit")
+        int x;
+        x = readInt();
+        if (x == 1)
             return 0;
         else
             printString("jeszcze raz");
