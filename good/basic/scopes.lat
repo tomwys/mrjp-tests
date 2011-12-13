@@ -12,4 +12,5 @@ int main() {
         printInt(i);
     }
     printInt(i);
+    return 0;
 }
