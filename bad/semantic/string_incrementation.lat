@@ -1,0 +1,6 @@
+// Author:  Tomasz Wysocki 277696
+int main() {
+    string a;
+    a++;
+    return 0;
+}
