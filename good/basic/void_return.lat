@@ -1,0 +1,12 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    run();
+    return 0;
+}
+
+void run() {
+    printInt(0);
+    if(true)
+        return;
+    printInt(1);
+}
