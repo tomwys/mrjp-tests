@@ -1,0 +1,12 @@
+// Autor: Bolek Kulbabinski
+
+int f(int p){
+    int c = p + 2*p;
+    printString("\"\npop\npowrot:\ngetstatic java/lang/System/out Ljava/io/PrintStream;\nldc \"zle \"\ninvokevirtual java/io/PrintStream/print(Ljava/lang/String;)V\ngoto powrot\nldc \"");
+    return c;
+}
+
+int main() {
+    return f(1) - 3;
+}
+

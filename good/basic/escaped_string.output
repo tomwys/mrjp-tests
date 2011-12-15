@@ -1,0 +1,8 @@
+"
+pop
+powrot:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc "zle "
+invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+goto powrot
+ldc "

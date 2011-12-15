@@ -1,0 +1,5 @@
+// Autor: Tomasz Wysocki 277696
+int main() {
+    printString("\\a\\n\n\tb\"");
+    return 0;
+}
