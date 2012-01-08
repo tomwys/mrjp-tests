@@ -1,0 +1,24 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    b(t(1) && f(2));
+    b(t(3) && t(4));
+    b(t(5) || t(6));
+    b(f(7) && t(8));
+    b(t(9) && t(10) && t(11));
+    b(f(12) || f(13) && t(14));
+    return 0;
+}
+
+boolean f(int a) {
+    printInt(a);
+    return false;
+}
+boolean t(int a) {
+    return !f(a);
+}
+void b(boolean a) {
+    if(a)
+        printString("true");
+    else
+        printString("false");
+}
