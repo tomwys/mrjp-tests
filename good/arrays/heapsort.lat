@@ -1,0 +1,71 @@
+// Program zaliczeniowy 3: "tablice - heap sort"
+// autor: Bolek Kulbabinski
+//   Wejscie: dlugosc tablicy n > 0 po czym n liczb calkowitych.
+//   Wyjscie: n liczb w kolejnosci niemalejacej
+
+void swap(int[] tab, int x, int y) {
+    int temp = tab[x];
+    tab[x] = tab[y];
+    tab[y] = temp;
+}
+
+// Poprawienie kopca typu max.
+void heapDown(int[] heap, int index, int heapSize) {
+    while (index * 2 < heapSize - 1) {
+        int left = index * 2 + 1;
+        int right = left + 1;
+        int max = left;
+        if (right < heapSize && heap[right] > heap[max]) {
+            max = right;
+        }
+        if (heap[max] > heap[index]) {
+            swap(heap, max, index);
+            index = max;
+        } else {
+            return;
+        }
+    }
+}
+
+int extractMax(int[] heap, int heapSize) {
+    int max = heap[0];
+    heap[0] = heap[heapSize - 1];
+    heapDown(heap, 0, heapSize - 1);
+    return max;
+}
+
+void heapSort(int[] heap) {
+    // Budowanie kopca.
+    int i = heap.length / 2;
+    while (i >= 0) {
+        heapDown(heap, i, heap.length);
+        i--;
+    }
+
+    // Sortowanie.
+    i = heap.length - 1;
+    while (i >= 0) {
+        heap[i] = extractMax(heap, i + 1);
+        i--;
+    }
+}
+
+int main() {
+    int n = readInt();
+    int[] tab = new int[n];
+
+    int i = 0;
+    while (i < n) {
+        tab[i] = readInt();
+        i++;
+    }
+
+    heapSort(tab);
+
+    for (int elem : tab) {
+        printInt(elem);
+    }
+
+    return 0;
+}
+
