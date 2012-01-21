@@ -1,0 +1,75 @@
+// autor: Bolek Kulbabinski
+
+class A {
+    void print() {
+        printString("A");
+    }
+}
+
+class B extends A {
+    void print() {
+        printString("B");
+    }
+}
+
+class C extends B {
+    void print() {
+        printString("C");
+    }
+}
+
+class D extends C {
+    void print() {
+        printString("D");
+    }
+}
+
+
+
+B fun(){
+    // Return z podtypem.
+    return new C;
+}
+
+A fun2(B param){
+    return param;
+}
+
+int main(){
+    // Inicjalizacja podtypem.
+    A z1 = new B;
+    z1.print();
+    A z2 = fun();
+    z2.print();
+
+    // Przypisanie podtypu.
+    z2 = new B;
+    z2.print();
+
+    // Przekazanie podtypu jako parametr.
+    A z3 = fun2(new C);
+    z3.print();
+
+    // Nadtyp w for-each (dla tablic obiektow).
+    C[] tab;
+    tab  = new C[3];
+    tab[0] = new C;
+    tab[1] = new D;
+    tab[2] = new D;
+    for (B elem : tab) {
+        fun2(elem).print();
+    }
+
+    // Porownywanie z podtypem.
+    B t1 = new B;
+    A t2 = t1;
+
+    if (t1 == t2) {
+        printString("tak");
+    }
+    if (t1 != t2) {
+        printString("nie");
+    }
+
+    return 0;
+}
