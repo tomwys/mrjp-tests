@@ -1,0 +1,37 @@
+/**
+ * Iterative fibonacci.
+ *
+ * @param n a non-negative index in Fibonacci sequence.
+ * @return value of `n`'th Fibonacci number
+ *
+ * @author cbart@students.mimuw.edu.pl (Cezary Bartoszuk)
+ */
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    int fib_a = 0;
+    int fib_b = 1;
+    int tmp;
+    int i = 2;
+    while (i <= n) {
+        tmp = fib_b + fib_a;
+        fib_a = fib_b;
+        fib_b = tmp;
+        i++;
+    }
+    return fib_b;
+}
+
+
+int main() {
+    int i = readInt();
+    if (i >= 0) {
+        printInt(fibonacci(i));
+        return 0;
+    } else {
+        printString("Expected a non-negative integer, but got:");
+        printInt(i);
+        return 1;
+    }
+}
