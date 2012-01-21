@@ -1,0 +1,7 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    string[] a = new string[1];
+    a[0] = "abc";
+    printString(a[0]);
+    return 0;
+}

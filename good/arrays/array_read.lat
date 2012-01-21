@@ -1,0 +1,5 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    (new int[1])[0];
+    return 0;
+}

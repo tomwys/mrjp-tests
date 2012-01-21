@@ -1,0 +1,5 @@
+// Author: Tomasz Wysocki 277696
+int main() {
+    string[] a = new string[1];
+    return 0;
+}
