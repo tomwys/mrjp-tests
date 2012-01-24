@@ -1,0 +1,183 @@
+/******************************************************************
+ *                                                                *
+ * bfs test by Michał Gregorczyk (mg277528@students.mimuw.edu.pl) *
+ *                               (michalg89@gmail.com)            *
+ *                                                                *
+ ******************************************************************
+ * 22. stycznia 12:00                                             *
+ *                                                                *
+ * Mój kompilator jeszcze nie potrafi                             *
+ * skompilować tego testu, dlatego                                *
+ * nie sprawidziłem jego poprawności.                             *
+ * Test przechodzi natomiast przez                                *
+ * analizę semantyczną.                                           *
+ *                                                                *
+ * Będę wdzięczny za wszelkie uwagi                               *
+ * typu "nie działa, daje zły wynik"                              *
+ * lub "u mnie działa".                                           *
+ *****************************************************************/
+
+class Node{
+    boolean visited;
+    int value;
+    List neighbours;
+
+    void init(int val){
+        visited = false;
+        value = val;
+        neighbours = null;    
+    }
+
+    boolean isVisited(){
+        return visited;
+    }
+
+    void markAsVisited(){
+        visited = true;
+    }
+
+    int getValue(){
+        return value;
+    }
+
+    List getNeighbours(){
+        return neighbours;
+    }
+
+    void addNeighbour(Node n){
+        if (neighbours == null){
+            neighbours = new List;
+            neighbours.makeSingleton(n);
+        }
+        else{
+            List newNeighbours = new List;
+            newNeighbours.cons(n, neighbours);
+            neighbours = newNeighbours;
+        }
+    }
+}
+
+class List{
+    Node head;
+    List tail;
+
+    void makeSingleton(Node node){
+        head = node;
+        tail = null;
+    }
+
+    Node getHead(){
+        return head;
+    }
+
+    List getTail(){
+        return tail;
+    }
+
+    void cons(Node newHead, List newTail){
+        self.head = newHead;
+        self.tail = newTail;
+    }
+}
+
+class Queue{
+    List first;
+    List last;
+
+    Node get(){
+        if (first == null)
+            return null;
+
+        Node retEl = first.head;
+
+        first = first.tail;
+        if (first == null)
+            last = null;
+
+        return retEl;
+    }
+
+    void put(Node n){
+        List newTail = new List;
+        newTail.makeSingleton(n);
+        if (first == null){
+            first = newTail;
+            last = newTail;
+        }
+        else{
+            last.cons(last.getHead(), newTail);
+            last = newTail;
+        }
+    }
+
+    boolean isEmpty(){
+        return (first == null);
+    }
+}
+
+int main(){
+    Node graph = prepareData();
+    graph.markAsVisited();
+    Queue q = new Queue;
+    q.put(graph);
+    bfs(q);
+    return 0;
+}
+
+Node prepareData(){
+    Node n1 = new Node;
+    n1.init(1);
+    Node n2 = new Node;
+    n2.init(2);
+    Node n3 = new Node;
+    n3.init(3);
+    Node n4 = new Node;
+    n4.init(4);
+    Node n5 = new Node;
+    n5.init(5);
+    Node n6 = new Node;
+    n6.init(6);
+    Node n7 = new Node;
+    n7.init(7);
+    Node n8 = new Node;
+    n8.init(8);
+    Node n9 = new Node;
+    n9.init(9);
+
+    n1.addNeighbour(n3);
+    n1.addNeighbour(n2);
+    
+    n2.addNeighbour(n3);
+
+    n3.addNeighbour(n6);
+    n3.addNeighbour(n5);
+    n3.addNeighbour(n4);
+
+    n4.addNeighbour(n2);
+
+    n5.addNeighbour(n7);
+
+    n7.addNeighbour(n8);
+
+    n8.addNeighbour(n9);
+
+    n9.addNeighbour(n5);
+
+    return n1;
+}
+
+void bfs(Queue q){
+    while (! q.isEmpty()){
+        Node el = q.get();
+        printInt(el.getValue());
+        List neigh = el.getNeighbours();
+        while(neigh != null){
+            Node n = neigh.getHead();
+            if (!n.isVisited()){
+                n.markAsVisited();
+                q.put(n);
+            }
+            neigh = neigh.getTail();
+        }
+    }
+}

@@ -1,0 +1,92 @@
+// autor: Pawel Magryta pm262455
+
+
+
+
+
+
+
+
+int main(){
+	int dlugoscListy = 30;
+	listaTest(dlugoscListy );
+	return 0;
+}
+
+
+###### krotki test listy:
+# lista to klasa z publicznymi obiektami bez metod
+
+void listaTest(int dlugoscListy){
+	 30;
+	Lista lista = zwrocListeDlugosci(dlugoscListy);
+	Lista odKonca = przejdzSieNaKoniecIWypisuj(lista, dlugoscListy);
+	lista = wrocNaPoczatekIWypisuj(odKonca, dlugoscListy);
+	printString("po spacerku wartosc pierwszego elementu:");
+	printInt(lista.wartosc);
+	if (dlugoscListy >= 5){
+		Lista drugi = lista.nastepny;
+		printString("po spacerku wartosc drugiego elementu:");
+		printInt(lista.nastepny.wartosc);
+	} else {
+		return;
+	}
+}
+
+
+Lista przejdzSieNaKoniecIWypisuj(Lista start, int dl){
+	Lista a = start, b = start;
+	printString("idziemy na koniec listy: ");
+	int i = 0;
+	while (i < dl){
+		printInt(a.wartosc);
+		b = a;
+		a = a.nastepny;
+		i++;
+	}
+	return b;
+}
+
+Lista wrocNaPoczatekIWypisuj(Lista odKonca, int dl){
+	Lista a = odKonca, b;
+	printString("wracamy na poczatek listy: ");
+	int w = dl;
+	while (w > 0){
+		printInt(a.wartosc);
+		b = a;
+		a = a.poprzedni;
+		w--;
+	}
+	return b;
+}
+
+class Lista{
+	Lista poprzedni, nastepny;
+	int wartosc;
+}
+
+Lista zwrocListeDlugosci(int dlugoscListy){
+	printString("Krotki test listy:");
+	Lista start = new Lista, a, n;
+	a = start;
+	int wsk = 1;
+	start.wartosc = 0;
+	while (wsk != dlugoscListy){
+		start.poprzedni = null;
+		a.nastepny = new Lista;
+		n = a;
+		a = a.nastepny;
+		a.wartosc = wsk;
+		a.poprzedni = n;
+		wsk++;
+	}
+	a.nastepny = null;
+	printString("wygenerowal liste 2kierunkowa dlugosci :");
+	printInt(dlugoscListy);
+	printString("__________");
+	return start;
+}
+
+
+
+

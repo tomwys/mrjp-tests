@@ -1,0 +1,129 @@
+// autor: Pawel Magryta pm262455
+
+
+
+
+
+
+
+
+int main(){
+	int dlugoscListy = 30;
+	testMergeSort(dlugoscListy);
+	return 0;
+}
+
+
+////// merge sort na tablicoListach
+
+void testMergeSort(int dlugoscListy){
+	Lista start = generujTablicoListeDoSortowaniaMerge13co7Malejaco(dlugoscListy, true);
+	Lista malejaco = mergeSort(start, 0, dlugoscListy);
+	przejdzSieNaKoniecIWypisuj(malejaco, dlugoscListy);
+}
+
+Lista mergeSort(Lista start, int pocz, int kon1Za){
+	Lista i1, i2;
+	if (kon1Za - pocz > 1){
+		int srodek = (kon1Za - pocz) /2 + pocz;
+		i1 = mergeSort(start, pocz, srodek);
+		i2 = mergeSort(start, srodek, kon1Za);
+		return scalaj(i1, srodek - pocz, i2, kon1Za - srodek);
+	}
+	Lista n = new Lista;
+	n.wartosc = pokazWartosc(start, pocz);
+	return n;
+}
+
+Lista scalaj(Lista lj, int ljLength, Lista ld, int ldLength){
+	int w1 = 0, w2 = 0, ws = 0;
+	Lista start = generujTablicoListeDoSortowaniaMerge13co7Malejaco(ljLength + ldLength, false);
+	int wart = pokazWartosc(lj, w1);
+	int wart2 = pokazWartosc(ld, w2);
+	while (ws < ljLength + ldLength){
+		if (w1 == ljLength)	wart = -1;
+		else wart = pokazWartosc(lj, w1);
+		if (w2 == ldLength)	wart2 = -1;
+		else wart2 = pokazWartosc(ld, w2);
+		if (wart2 > wart){
+			w2++;		
+			ladujWartosc(start, ws, wart2);
+		} else{
+			w1++;
+			ladujWartosc(start, ws, wart);
+		}
+		ws++;
+	}
+	return start;
+}
+
+//////////////////////////////////
+int pokazWartosc(Lista start, int poz){
+	int w = 0;
+	Lista a = start;
+	while (w != poz) {
+		a = a.nastepny;
+		w++;
+	}
+	return a.wartosc;
+}
+void ladujWartosc(Lista start, int poz, int wartosc){
+	int w = 0;
+	Lista a = start;
+	while (w != poz) {
+		a = a.nastepny;
+		w++;
+	}
+	a.wartosc = wartosc;
+}
+///////////////////////////////
+
+Lista generujTablicoListeDoSortowaniaMerge13co7Malejaco(int dlugoscListy, boolean pisz){
+	if (pisz) printString("robimy liste do mergeSorta:");
+	Lista start = new Lista, a, n;
+	a = start;
+	int wsk = 1;
+	start.wartosc = 0;
+	if (pisz) printInt(start.wartosc);
+	while (wsk != dlugoscListy){
+		start.poprzedni = null;
+		a.nastepny = new Lista;
+		n = a;
+		a = a.nastepny;
+		if (wsk % 5 == 3) a.wartosc = dlugoscListy - wsk / 2;
+		else a.wartosc = wsk % 13;
+		
+		a.poprzedni = n;
+		//a.wartosc = wsk;
+		if (pisz) printInt(a.wartosc);
+		wsk++;
+	}
+	a.nastepny = null;
+	if (pisz) printString("wygenerowal liste 2kierunkowa dziwna dlugosci :");
+	if (pisz) printInt(dlugoscListy);
+	if (pisz) printString("__________");
+	return start;
+}
+
+###### listy
+
+Lista przejdzSieNaKoniecIWypisuj(Lista start, int dl){
+	Lista a = start, b = start;
+	printString("idziemy na koniec listy (ma byc nierosnaco): ");
+	int wsk = 0;
+	while (wsk < dl){
+		printInt(a.wartosc);
+		b = a;
+		a = a.nastepny;
+		wsk++;
+	}
+	return b;
+}
+
+class Lista{
+	Lista poprzedni, nastepny;
+	int wartosc;
+}
+
+
+
