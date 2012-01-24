@@ -1,0 +1,86 @@
+int main() {
+    Node w = plus(minus(liczba(4), liczba(3)), razy(liczba(2), podziel(liczba(4), liczba(2))));
+    printInt(w.value());
+    return 0;
+}
+
+Node plus(Node n1, Node n2) {
+    Operator res = new Plus;
+    res.left = n1;
+    res.right = n2;
+    return res;
+}
+Node razy(Node n1, Node n2) {
+    Operator res = new Razy;
+    res.left = n1;
+    res.right = n2;
+    return res;
+}
+Node podziel(Node n1, Node n2) {
+    Operator res = new Podziel;
+    res.left = n1;
+    res.right = n2;
+    return res;
+}
+Node minus(Node n1, Node n2) {
+    Operator res = new Minus;
+    res.left = n1;
+    res.right = n2;
+    return res;
+}
+Node liczba(int l) {
+    Liczba res = new Liczba;
+    res.v = l;
+    return res;
+}
+
+class Node {
+    int value() {
+        error();
+        return 0;
+    }
+}
+
+class Liczba extends Node {
+    int v;
+    int value() {
+        return v;
+    }
+}
+
+class Operator extends Node {
+    Node left;
+    Node right;
+
+    int operator(int n1, int n2) {
+        error();
+        return 0;
+    }
+    int value() {
+        return self.operator(left.value(), right.value());
+    }
+}
+
+class Plus extends Operator {
+    int operator(int a, int b) {
+        return a + b;
+    }
+}
+
+class Minus extends Operator {
+    int operator(int a, int b) {
+        return a - b;
+    }
+}
+
+class Razy extends Operator {
+    int operator(int a, int b) {
+        return a * b;
+    }
+}
+
+class Podziel extends Operator {
+    int operator(int a, int b) {
+        return a / b;
+    }
+}
